@@ -1,0 +1,49 @@
+WINDOWS: Creating Virtual Environment with Custom Name (Python >=3.11 Required)
+
+1. Check Python version (must be 3.11 or later):
+   python --version
+   
+   To use specific Python 3.11:
+   py -3.11 --version
+   
+   To see all available Python versions:
+   py -0
+
+2. Create venv with Python 3.11:
+   py -3.11 -m venv my_custom_env_name
+
+3. Activate environment:
+   my_custom_env_name\Scripts\activate
+
+4. Upgrade pip:
+   python -m pip install --upgrade pip
+
+5. Install uv:
+   pip install uv
+
+6. Install project dependencies:
+   uv sync --extra dev --active
+   
+   Note: Use --active flag because uv expects .venv by default
+   
+7. Alternative without uv:
+   pip install -e ".[dev]"
+
+8. Deactivate when done:
+   deactivate
+
+TROUBLESHOOTING:
+- If Python version < 3.11, install Python 3.11+ first
+- If py -3.11 fails, Python 3.11 is not installed
+- Download Python 3.11+ from python.org
+
+IMPORTANT:
+- Custom env names require --active flag with uv commands
+- Add custom env name to .gitignore
+- Environment name doesn't affect package installation
+- Use same --active flag for any future uv commands
+
+EXAMPLES:
+- Create: py -3.11 -m venv .venv-win
+- Activate: .venv-win\Scripts\activate
+- Install: uv sync --extra dev --active
