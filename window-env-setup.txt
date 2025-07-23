@@ -13,7 +13,7 @@ WINDOWS: Creating Virtual Environment with Custom Name (Python >=3.11 Required)
    py -3.11 -m venv my_custom_env_name
 
 3. Activate environment:
-   my_custom_env_name\Scripts\activate
+   my_custom_env_name\Scripts\activate (add .ps1 at the end if in powershell)
 
 4. Upgrade pip:
    python -m pip install --upgrade pip
